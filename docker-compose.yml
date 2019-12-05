@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+    rabbitmq:
+        build: "./rabbitmq"
+        ports:
+            - 15672:15672
+            - 5672:5672
+            - 5671:5671
+
+    json-data-server:
+        build: "./json-data-server"
+        ports:
+            - 3001:3001
+
+    text-data-server:
+        build: "./text-data-server"
+        ports:
+            - 3002:3002
