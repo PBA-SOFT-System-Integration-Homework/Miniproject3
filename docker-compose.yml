@@ -27,4 +27,7 @@ services:
         depends_on: 
             - "rabbitmq"
         command: ["./wait-for-it.sh", "-t","30","rabbitmq:5672", "--", "node", "server.js"]
+        links:
+            - "text-data-server"
+            - "json-data-server"
 

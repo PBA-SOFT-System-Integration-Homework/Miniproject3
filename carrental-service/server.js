@@ -49,12 +49,12 @@ function createChannel() {
             const replyTo = msg.properties.replyTo;
 
             let carList = [];
-            await fetch('http://localhost:3001/car')
+            await fetch('http://json-data-server:3001/car')
                 .then(res => res.json())
                 .then(res => {
                     carList = res
                 })
-            await fetch('http://localhost:3002/car')
+            await fetch('http://text-data-server:3002/car')
                 .then(res => res.text())
                 .then(text => {
                     const formattedList = convertTxtContentToArray(text);
