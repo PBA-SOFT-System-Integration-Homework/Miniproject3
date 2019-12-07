@@ -27,4 +27,4 @@ Microservice     | Description                            | Link                
 json-data-server | Nodejs server serving car data as json | <http://localhost:3001/car> |
 text-data-server | Nodejs server serving car data as text | <http://localhost:3002/car> |
 RabbitMQ         | RabbitMQ message broker                | <http://localhost:15672>    | guest/guest to login
-carrental-service | Nodejs service fetching car data from data servers| <http://localhost:3003> | Currently unable to fetch from endpoints :-(
+carrental-service | Nodejs service fetching car data from data servers| <http://localhost:3003> |
