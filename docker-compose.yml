@@ -1,5 +1,6 @@
 version: "3"
 
+
 services:
 
     rabbitmq:
@@ -8,7 +9,7 @@ services:
             - 15672:15672
             - 5672:5672
             - 5671:5671
-
+        
     json-data-server:
         build: "./json-data-server"
         ports:
@@ -18,3 +19,12 @@ services:
         build: "./text-data-server"
         ports:
             - 3002:3002
+
+    carrental-service:
+        build: "./carrental-service"
+        ports:
+            - 3003:3003
+        depends_on: 
+            - "rabbitmq"
+        command: ["./wait-for-it.sh", "-t","30","rabbitmq:5672", "--", "node", "server.js"]
+
