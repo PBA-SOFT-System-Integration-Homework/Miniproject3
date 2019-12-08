@@ -1,0 +1,13 @@
+{
+    "name": "rating-service",
+    "version": "1.0.0",
+    "description": "Miniproject3 rating service",
+    "main": "server.js",
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }
+  }
