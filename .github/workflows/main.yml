@@ -17,6 +17,6 @@ jobs:
          rm -rf Miniproject3
          git clone git://github.com/PBA-SOFT-System-Integration-Homework/Miniproject3
          cd Miniproject3
-         docker-compose down --rmi 'all'
-         docker-compose up
+         docker-compose build
+         docker-compose up -d
          echo "All done."
