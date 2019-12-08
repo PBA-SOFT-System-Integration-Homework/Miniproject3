@@ -19,4 +19,4 @@ jobs:
          cd Miniproject3
          docker-compose down --rmi 'all'
          docker-compose up
-         echo "All done!"
+         echo "All done."
