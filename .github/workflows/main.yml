@@ -1,0 +1,22 @@
+name: deploy & setup containers on droplet (167.172.98.125)
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+         mkdir -p Miniproject3
+         cd Miniproject3
+         git pull
+         docker-compose down --rmi 'all'
+         docker-compose up
+         echo "All done!"
