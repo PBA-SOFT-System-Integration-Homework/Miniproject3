@@ -1,0 +1,15 @@
+{
+  "name": "carrental-cli",
+  "version": "1.0.0",
+  "description": "Miniproject3 carrental-cli",
+  "main": "main.js",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "inquirer": "^7.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
