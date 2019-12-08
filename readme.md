@@ -30,6 +30,15 @@ RabbitMQ         | RabbitMQ message broker                | <http://localhost:15
 carrental-service | Nodejs service fetching car data from data servers| <http://localhost:3003> |
 rating-service | NodeJS microservice REST API | <http://localhost:3004> | Handles user rating questions and additional questions
 
+### Rating-service API endpoints
+
+Endpoint | Method | Result
+---------|---------|--------
+`/questions/rating` | GET | JSON with rating questions for inquirer
+`/questions/additional`| GET | JSON with additional questions inquirer
+`/feedback` | POST | JSON with feedback answers
+`/feedback` | GET | JSON with all feedback
+
 
 ### Hints
 Docker on deployed ubunut server gives an error with user not allowed this is the fix :
