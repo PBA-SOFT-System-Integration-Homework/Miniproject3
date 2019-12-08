@@ -12,11 +12,19 @@ A further development of [Miniproject2](https://github.com/PBA-SOFT-System-Integ
 
 ## Microservices Architecture
 
-- TBD (model)
+The system is separated into several docker containers:
+
+![Microservices Architecture image](assets/microservices.png)
+
+### Execution Flow / Sequence Diagram
+The basic execution flow is the same as in the previous iteration of the Miniproject. It can be found [here](https://github.com/PBA-SOFT-System-Integration-Homework/Miniproject2/blob/master/assets/Miniproject2.png)
+
 
 ## CI/CD Pipeline
 
-The CI/CD Pipeline is handled by Github Actions, Githubs own execution environment. 
+The CI/CD Pipeline is handled by Github Actions, Githubs own execution environment: 
+
+![ci/cd pipeline image](assets/cicd.png)
 
 On code commit to the project repository, the .github/workflows/main.yml file is executed, and the below described Deployment happens:
 
