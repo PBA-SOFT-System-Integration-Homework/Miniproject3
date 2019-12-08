@@ -28,3 +28,13 @@ json-data-server | Nodejs server serving car data as json | <http://localhost:30
 text-data-server | Nodejs server serving car data as text | <http://localhost:3002/car> |
 RabbitMQ         | RabbitMQ message broker                | <http://localhost:15672>    | guest/guest to login
 carrental-service | Nodejs service fetching car data from data servers| <http://localhost:3003> |
+rating-service | NodeJS microservice REST API | <http://localhost:3004> | Handles user rating questions and additional questions
+
+
+### Hints
+Docker on deployed ubunut server gives an error with user not allowed this is the fix :
+```sh 
+sudo usermod -aG docker $USER
+
+sudo chmod 755 -R .
+```

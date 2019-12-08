@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fetch = require('node-fetch');
 
 // POST_URL = "'https://postman-echo.com/post'"   //DEBUG
-POST_URL = "http://localhost:3004";
+POST_URL = "http://167.172.98.125:3004";
 
 function main() {
 
