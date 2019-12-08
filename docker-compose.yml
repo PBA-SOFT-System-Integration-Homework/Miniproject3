@@ -30,4 +30,10 @@ services:
         links:
             - "text-data-server"
             - "json-data-server"
+            - "rating-service"
+
+    rating-service:
+        build: "./rating-service"
+        ports:
+            - 3004:3004
 

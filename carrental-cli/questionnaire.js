@@ -87,6 +87,5 @@ function post(whatToPost){
     .then(json => console.log(json.data)); //DEBUG should be changed/removed
 }
 
-
 main();
 
