@@ -17,6 +17,8 @@ jobs:
          rm -rf Miniproject3
          git clone git://github.com/PBA-SOFT-System-Integration-Homework/Miniproject3
          cd Miniproject3
+         sudo su
          docker-compose down --rmi 'all'
          docker-compose up
+         exit
          echo "All done!"
