@@ -1,5 +1,6 @@
 var amqp = require('amqplib/callback_api');
 const inquirer = require('inquirer');
+const questions = require('./questionnaire');
 let run = true;
 let cars = [];
 
@@ -89,7 +90,8 @@ function askForID() {
             bookCar(booking);
             console.log('Sent for approval to carrental');
             console.log('Thank you come again');
-            console.log('Press Ctrl+C to terminate')
+            questions();
+            console.log('Press Ctrl+C to terminate');
         })
 }
 

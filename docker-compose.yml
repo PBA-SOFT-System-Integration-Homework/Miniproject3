@@ -26,8 +26,14 @@ services:
             - 3003:3003
         depends_on: 
             - "rabbitmq"
-        command: ["./wait-for-it.sh", "-t","30","rabbitmq:5672", "--", "node", "server.js"]
+        # command: ["./wait-for-it.sh", "-t","30","rabbitmq:5672", "--", "node", "server.js"]
+        command: ["node", "server.js"]
         links:
             - "text-data-server"
             - "json-data-server"
+
+    rating-service:
+        build: "./rating-service"
+        ports:
+            - 3004:3004
 
