@@ -14,9 +14,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-         mkdir -p Miniproject3
+         rm -rf Miniproject3
+         git clone git://github.com/PBA-SOFT-System-Integration-Homework/Miniproject3
          cd Miniproject3
-         git pull
          docker-compose down --rmi 'all'
          docker-compose up
          echo "All done!"
