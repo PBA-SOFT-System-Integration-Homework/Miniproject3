@@ -10,11 +10,11 @@ A further development of [Miniproject2](https://github.com/PBA-SOFT-System-Integ
 - Stanislav Novitski (cph-sn183@cphbusiness.dk)
 - Alexander Winther Hørsted-Andersen (cph-ah353@cphbusiness.dk)
 
-## Microservices Architecture
+## Architecture
 
 The system is separated into several docker containers:
 
-![Microservices Architecture image](assets/microservices.png)
+![Architecture image](assets/microservices.png)
 
 ### Execution Flow / Sequence Diagram
 The basic execution flow is the same as in the previous iteration of the Miniproject. It can be found [here](https://github.com/PBA-SOFT-System-Integration-Homework/Miniproject2/blob/master/assets/Miniproject2.png)
