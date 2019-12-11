@@ -15,8 +15,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-COPY wait-for-it.sh /usr/src/app
-
 EXPOSE 3003
 # CMD [ "node", "server.js" ]
 
