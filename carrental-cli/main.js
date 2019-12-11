@@ -91,6 +91,7 @@ function askForID() {
             console.log('Thank you come again');
             questions();
             console.log('Press Ctrl+C to terminate');
+            setTimeout( () => { console.log("ZUKA"); process.exit(1) }, 20000);
         })
 }
 
