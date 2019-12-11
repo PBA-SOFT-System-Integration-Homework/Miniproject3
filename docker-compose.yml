@@ -9,16 +9,19 @@ services:
             - 15672:15672
             - 5672:5672
             - 5671:5671
+        restart: always
         
     json-data-server:
         build: "./json-data-server"
         ports:
             - 3001:3001
+        restart: always
 
     text-data-server:
         build: "./text-data-server"
         ports:
             - 3002:3002
+        restart: always
 
     carrental-service:
         build: "./carrental-service"
@@ -30,9 +33,11 @@ services:
         links:
             - "text-data-server"
             - "json-data-server"
+        restart: always
 
     rating-service:
         build: "./rating-service"
         ports:
             - 3004:3004
+        restart: always
 
