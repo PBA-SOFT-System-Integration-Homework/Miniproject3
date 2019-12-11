@@ -5,8 +5,6 @@ const fetch = require('node-fetch');
 var amqpConn = null;
 function start() {
 
-    setTimeout( () => { console.log("ZUKA"); process.exit(1) }, 20000);
-    console.error('My name Jeff')
     amqp.connect('amqp://rabbitmq:5672', function (error, connection) {
         if (error) {
             console.error("[AMQP]", error.message);
