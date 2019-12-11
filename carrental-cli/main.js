@@ -1,7 +1,6 @@
 var amqp = require('amqplib/callback_api');
 const inquirer = require('inquirer');
 const questions = require('./questionnaire');
-let run = true;
 let cars = [];
 
 
