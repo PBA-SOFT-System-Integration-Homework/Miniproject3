@@ -68,7 +68,6 @@ Endpoint | Method | Result
 [/feedback](http://167.172.98.125:3004/feedback) | POST | JSON with feedback answers
 [/feedback](http://167.172.98.125:3004/feedback) | GET | JSON with all feedback
 
-
 ### Hints
 Docker on deployed ubunut server gives an error with user not allowed this is the fix :
 ```sh 
