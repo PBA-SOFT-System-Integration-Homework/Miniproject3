@@ -1,4 +1,4 @@
-var open = require('amqplib').connect('amqp://167.172.98.125:5672');
+var open = require('amqplib').connect(process.env.RABBITMQ_QUEUE);
 
 let q = 'car_bookings';
 open.then(function (conn) {

@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 var amqpConn = null;
 function start() {
 
-    amqp.connect('amqp://rabbitmq:5672', function (error, connection) {
+    amqp.connect(process.env.RABBITMQ_QUEUE_INTERNAL, function (error, connection) {
         if (error) {
             console.error("[AMQP]", error.message);
             return setTimeout(start, 1000);
@@ -49,12 +49,12 @@ function createChannel() {
             const replyTo = msg.properties.replyTo;
 
             let carList = [];
-            await fetch('http://json-data-server:3001/car')
+            await fetch(process.env.JSON_DATA_URL+'/car')
                 .then(res => res.json())
                 .then(res => {
                     carList = res
                 })
-            await fetch('http://text-data-server:3002/car')
+                await fetch(process.env.TEXT_DATA_URL+'/car')
                 .then(res => res.text())
                 .then(text => {
                     const formattedList = convertTxtContentToArray(text);

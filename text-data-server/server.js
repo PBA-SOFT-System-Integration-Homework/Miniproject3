@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs');
 var bodyParser = require('body-parser')
-var open = require('amqplib').connect('amqp://localhost:5672');
+var open = require('amqplib').connect(process.env.RABBITMQ_QUEUE_INTERNAL);
 const app = express()
 const PORT = 3002
 

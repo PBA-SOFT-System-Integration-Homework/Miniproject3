@@ -10,18 +10,24 @@ services:
             - 5672:5672
             - 5671:5671
         restart: always
+        env_file: 
+            - .env
         
     json-data-server:
         build: "./json-data-server"
         ports:
             - 3001:3001
         restart: always
+        env_file: 
+            - .env
 
     text-data-server:
         build: "./text-data-server"
         ports:
             - 3002:3002
         restart: always
+        env_file: 
+            - .env
 
     carrental-service:
         build: "./carrental-service"
@@ -34,10 +40,14 @@ services:
             - "text-data-server"
             - "json-data-server"
         restart: always
+        env_file: 
+            - .env
 
     rating-service:
         build: "./rating-service"
         ports:
             - 3004:3004
         restart: always
+        env_file: 
+            - .env
 

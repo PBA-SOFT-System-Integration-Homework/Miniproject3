@@ -3,9 +3,11 @@ const inquirer = require('inquirer');
 const questions = require('./questionnaire');
 let cars = [];
 
+URL = "'amqp://localhost:5672'"
+
 
 function createResponseQueue(userInput) {
-    amqp.connect('amqp://167.172.98.125:5672', function (error, connection) {
+    amqp.connect(URL, function (error, connection) {
         if (error) {
             throw error;
         }
@@ -97,7 +99,7 @@ function askForID() {
 function bookCar(booking) {
     const q = 'car_bookings';
 
-        amqp.connect('amqp://167.172.98.125:5672', function (err, conn) {
+        amqp.connect(URL, function (err, conn) {
             if (err) console.log(err);
 
             conn.createChannel(on_open);
