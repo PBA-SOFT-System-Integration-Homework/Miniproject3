@@ -1,0 +1,13 @@
+{
+  "name": "carrental-consumer",
+  "version": "1.0.0",
+  "description": "Miniproject3 carrental-comsumer",
+  "main": "main.js",
+  "dependencies": {
+    "amqplib": "^0.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
