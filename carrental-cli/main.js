@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const questions = require('./questionnaire');
 let cars = [];
 
-URL = "'amqp://167.172.98.125:5672'"
+URL = "amqp://167.172.98.125:5672"
 
 function createResponseQueue(userInput) {
     amqp.connect(URL, function (error, connection) {
