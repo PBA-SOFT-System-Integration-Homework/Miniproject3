@@ -34,6 +34,11 @@ app.get('/questions/additional', (req, res, next) => {
             message: "'What is your geographical location?'"
         },
         {
+            type: 'input',
+            name: 'Hello',
+            message: "Hello ?"
+        },
+        {
             type: 'list',
             choices: ['Man', 'Woman', 'Non-binary', 'Prefer not to disclose'],
             name: 'Gender',
