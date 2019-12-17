@@ -67,6 +67,8 @@ function createChannel() {
                 // filter seats (default value is 0 so all will pass without provided value)
                 let match = (c.number_of_seats >= filter.numberOfSeats);
 
+                // filter by year
+                if (filter.year) match = (c.year >= filter.year)
                 //filter by model if filter is present
                 if (filter.model) match = (c.model.toLowerCase() = filter.model.toLowerCase());
 
