@@ -49,18 +49,35 @@ function createChannel() {
             const replyTo = msg.properties.replyTo;
 
             let carList = [];
-            await fetch(process.env.JSON_DATA_URL+'/car')
+            await fetch(process.env.JSON_DATA_URL + '/car')
                 .then(res => res.json())
                 .then(res => {
                     carList = res
                 })
-                await fetch(process.env.TEXT_DATA_URL+'/car')
+            await fetch(process.env.TEXT_DATA_URL + '/car')
                 .then(res => res.text())
                 .then(text => {
                     const formattedList = convertTxtContentToArray(text);
                     carList = carList.concat(formattedList);
                 })
-            carList = carList.filter(c => c.make === filter.make && c.year >= filter.year);
+            // check if numberOfSeats is provided else set it to 0;
+            if (!filter.numberOfSeats) filter.numberOfSeats = 0;
+
+            carList = carList.filter(c => {
+                // filter seats (default value is 0 so all will pass without provided value)
+                let match = (c.number_of_seats >= filter.numberOfSeats);
+
+                //filter by model if filter is present
+                if (filter.model) match = (c.model.toLowerCase() = filter.model.toLowerCase());
+
+                // filter by type if present
+                if (filter.type) match = (c.car_type_name.toLowerCase() === filter.carTypeName.toLowerCase());
+
+                return match;
+            });
+
+            //old filter
+            // carList = carList.filter(c => c.make === filter.make && c.year >= filter.year);
             channel.sendToQueue(replyTo, Buffer.from(JSON.stringify(carList)));
             channel.ack(msg)
         }, {
