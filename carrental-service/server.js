@@ -74,7 +74,7 @@ function createChannel() {
                 if (filter.make) match = (c.make.toLowerCase() = filter.make.toLowerCase());
 
                 // filter by type if present
-                if (filter.type) match = (c.car_type_name.toLowerCase() === filter.carTypeName.toLowerCase());
+                if (filter.carTypeName) match = (c.car_type_name.toLowerCase() === filter.carTypeName.toLowerCase());
 
                 return match;
             });
