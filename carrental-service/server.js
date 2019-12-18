@@ -68,13 +68,13 @@ function createChannel() {
                 let match = (c.number_of_seats >= filter.numberOfSeats);
 
                 // filter by year
-                if (filter.year) match = (c.year >= filter.year);
+                if (filter.year && c.year) match = (c.year >= filter.year);
                 
                 //filter by make if filter is present
-                if (filter.make) match = (c.make.toLowerCase() === filter.make.toLowerCase());
+                if (filter.make && c.make) match = (c.make.toLowerCase() == filter.make.toLowerCase());
 
                 // filter by type if present
-                if (filter.carTypeName) match = (c.car_type_name.toLowerCase() === filter.carTypeName.toLowerCase());
+                if (filter.carTypeName && c.car_type_name) match = (c.car_type_name.toLowerCase() == filter.carTypeName.toLowerCase());
 
                 return match;
             });

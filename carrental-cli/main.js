@@ -49,8 +49,9 @@ function main() {
     ];
     inquirer.prompt(markQuestion)
         .then(answer => {
-
+            console.log(JSON.stringify(answer))
             const filter = { make: answer.make, year: answer.year };
+            console.log(filter)
             createResponseQueue(JSON.stringify(filter));
             setTimeout(() => {
                 if (cars.length === 0) {
