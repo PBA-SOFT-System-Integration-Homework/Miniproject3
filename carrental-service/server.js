@@ -61,7 +61,7 @@ function createChannel() {
                     carList = carList.concat(formattedList);
                 })
             // check if numberOfSeats is provided else set it to 0;
-            if (!filter.numberOfSeats) filter.numberOfSeats = 0;
+            if (filter.numberOfSeats === undefined) filter.numberOfSeats = 0;
 
             carList = carList.filter(c => {
                 // filter seats (default value is 0 so all will pass without provided value)
