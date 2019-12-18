@@ -69,8 +69,9 @@ function createChannel() {
 
                 // filter by year
                 if (filter.year) match = (c.year >= filter.year)
-                //filter by model if filter is present
-                if (filter.model) match = (c.model.toLowerCase() = filter.model.toLowerCase());
+                
+                //filter by make if filter is present
+                if (filter.make) match = (c.make.toLowerCase() = filter.make.toLowerCase());
 
                 // filter by type if present
                 if (filter.type) match = (c.car_type_name.toLowerCase() === filter.carTypeName.toLowerCase());
